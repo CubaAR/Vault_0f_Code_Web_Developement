@@ -1,0 +1,48 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.recipe-card {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.recipe-image {
+    width: 100%;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#ingredients-list {
+    transition: all 0.5s ease;
+}
+
+button:hover {
+    background-color: #ff9800;
+    color: white;
+    cursor: pointer;
+}
+
+#steps p {
+    display: none;
+    transition: all 0.5s ease;
+}
+
+.active-step {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .recipe-card {
+        width: 100%;
+        padding: 10px;
+    }
+}
