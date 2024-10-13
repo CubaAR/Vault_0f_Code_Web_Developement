@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editkaro.in Portfolio</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        
+        .portfolio-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+       
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .category-buttons button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .category-buttons button:hover {
+            background-color: #2980b9;
+        }
+
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        
+        .video-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .video-card:hover {
+            transform: scale(1.05);
+        }
+
+        
+        .video-card iframe {
+            width: 100%;
+            height: 200px;
+        }
+
+        
+        .video-title {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        <h1>Portfolio - Editkaro.in</h1>
+
+        
+        <div class="category-buttons">
+            <button onclick="filterVideos('all')">All</button>
+            <button onclick="filterVideos('short')">Short Form Videos</button>
+            <button onclick="filterVideos('long')">Long Form Videos</button>
+            <button onclick="filterVideos('gaming')">Gaming Videos</button>
+            <button onclick="filterVideos('ads')">eCommerce Ads</button>
+        </div>
+
+        
+        <div class="video-grid" id="videoGrid">
+
+            <div class="video-card" data-category="short">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" title="YouTube video"></iframe>
+                <div class="video-title">Short Form Video</div>
+            </div>
+
+           
+            <div class="video-card" data-category="long">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" title="YouTube video"></iframe>
+                <div class="video-title">Long Form Video</div>
+            </div>
+
+            
+            <div class="video-card" data-category="gaming">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" title="YouTube video"></iframe>
+                <div class="video-title">Gaming Video</div>
+            </div>
+
+           
+            <div class="video-card" data-category="ads">
+                <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID4" title="YouTube video"></iframe>
+                <div class="video-title">eCommerce Ad</div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+      
+        function filterVideos(category) {
+            var videos = document.querySelectorAll('.video-card');
+            videos.forEach(function (video) {
+                if (category === 'all') {
+                    video.style.display = 'block';
+                } else {
+                    if (video.getAttribute('data-category') === category) {
+                        video.style.display = 'block';
+                    } else {
+                        video.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
